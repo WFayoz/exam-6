@@ -1,0 +1,26 @@
+[
+  {
+    "img": "https://example.com/food1.jpg",
+    "title": "Pizza",
+    "price": 10.99,
+    "quantity": 100
+  },
+  {
+    "img": "https://example.com/food2.jpg",
+    "title": "Burger",
+    "price": 8.5,
+    "quantity": 75
+  },
+  {
+    "img": "https://example.com/food3.jpg",
+    "title": "Salad",
+    "price": 7.25,
+    "quantity": 50
+  },
+  {
+    "img": "https://example.com/food4.jpg",
+    "title": "Sushi",
+    "price": 12.75,
+    "quantity": 60
+  }
+]
