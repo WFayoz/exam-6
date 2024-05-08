@@ -19,10 +19,10 @@ const Sidebar = () => {
         <img src={logo} alt="" />
       </div>
       <ul className="sidebar__list">
-        <li   className={`sidebar__list--item ${
-            focusedItem === 1 ? "active" : ""
-          }`}
-          onClick={() => handleItemClick(1)}>
+        <li
+          className={`sidebar__list--item ${focusedItem === 1 ? "active" : ""}`}
+          onClick={() => handleItemClick(1)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -36,10 +36,10 @@ const Sidebar = () => {
             />
           </svg>
         </li>
-        <li className={`sidebar__list--item ${
-            focusedItem === 2 ? "active" : ""
-          }`}
-          onClick={() => handleItemClick(2)}>
+        <li
+          className={`sidebar__list--item ${focusedItem === 2 ? "active" : ""}`}
+          onClick={() => handleItemClick(2)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -53,10 +53,10 @@ const Sidebar = () => {
             />
           </svg>
         </li>
-        <li className={`sidebar__list--item ${
-            focusedItem === 3 ? "active" : ""
-          }`}
-          onClick={() => handleItemClick(3)}>
+        <li
+          className={`sidebar__list--item ${focusedItem === 3 ? "active" : ""}`}
+          onClick={() => handleItemClick(3)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -70,10 +70,10 @@ const Sidebar = () => {
             />
           </svg>
         </li>
-        <li className={`sidebar__list--item ${
-            focusedItem === 4 ? "active" : ""
-          }`}
-          onClick={() => handleItemClick(4)}>
+        <li
+          className={`sidebar__list--item ${focusedItem === 4 ? "active" : ""}`}
+          onClick={() => handleItemClick(4)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="21"
@@ -87,10 +87,10 @@ const Sidebar = () => {
             />
           </svg>
         </li>
-        <li className={`sidebar__list--item ${
-            focusedItem === 5 ? "active" : ""
-          }`}
-          onClick={() => handleItemClick(5)}>
+        <li
+          className={`sidebar__list--item ${focusedItem === 5 ? "active" : ""}`}
+          onClick={() => handleItemClick(5)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -104,10 +104,10 @@ const Sidebar = () => {
             />
           </svg>
         </li>
-        <li className={`sidebar__list--item ${
-            focusedItem === 6 ? "active" : ""
-          }`}
-          onClick={() => handleItemClick(6)}>
+        <li
+          className={`sidebar__list--item ${focusedItem === 6 ? "active" : ""}`}
+          onClick={() => handleItemClick(6)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -121,10 +121,10 @@ const Sidebar = () => {
             />
           </svg>
         </li>
-        <li className={`sidebar__list--item ${
-            focusedItem === 7 ? "active" : ""
-          }`}
-          onClick={() => handleItemClick(7)}>
+        <li
+          className={`sidebar__list--item ${focusedItem === 7 ? "active" : ""}`}
+          onClick={() => handleItemClick(7)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="21"
@@ -144,6 +144,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
-
-

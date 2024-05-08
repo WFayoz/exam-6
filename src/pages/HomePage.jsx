@@ -5,15 +5,8 @@ import axios from "axios";
 
 const HomePage = () => {
   const [focusedItem, setFocusedItem] = useState(null);
-
-  const handleItemClick = (index) => {
-    if (focusedItem === index) {
-      setFocusedItem(index);
-    } else {
-      setFocusedItem(index);
-    }
-  };
   const [data, setData] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
 
   const getProducts = async () => {
     try {
@@ -27,24 +20,54 @@ const HomePage = () => {
     }
   };
 
-  console.log(data);
-
   useEffect(() => {
     getProducts();
   }, []);
 
+  const handleItemClick = (index) => {
+    if (focusedItem === index) {
+      setFocusedItem(null);
+    } else {
+      setFocusedItem(index);
+    }
+  };
+
+  const handleCardClick = (productId) => {
+    const updatedProducts = data.map((product) => {
+      if (product.id === productId && product.qnt > 0) {
+        return {
+          ...product,
+          qnt: product.qnt - 1,
+        };
+      }
+      return product;
+    });
+    setData(updatedProducts);
+  };
+
+  const filteredData = data.filter((product) =>
+    product.title.toLowerCase().includes(searchInput.toLowerCase())
+  );
+
   return (
-    <div className="home mx-auto">
+    <div className="home">
       <div className="header">
         <div className="header__title">
           <div className="header__title--name">
             <h2>Jaegar Resto</h2>
             <p>Tuesday, 2 Feb 2021</p>
           </div>
-          <form action="">
-            <IoSearch className="search__menu" />
-            <input type="search" placeholder="Search for food, coffe, etc.." />
-          </form>
+          <div className="flex gap-5 items-center justify-center">
+            <form onSubmit={(e) => e.preventDefault()}>
+              <IoSearch className="search__menu" />
+              <input
+                type="search"
+                placeholder="Search for food, coffee, etc.."
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+              />
+            </form>
+          </div>
         </div>
         <ul className="header__menu">
           <li
@@ -55,6 +78,7 @@ const HomePage = () => {
           >
             Hot dishes
           </li>
+
           <li
             className={`header__menu--item ${
               focusedItem === 2 ? "active" : ""
@@ -103,18 +127,20 @@ const HomePage = () => {
           <div>salom</div>
         </div>
         <div className="menu__dishes">
-          <div className="cards ">
-            {data.map((product) => (
-              <div key={product.id} className="card">
-                <img src={product.img} alt="" />
-                <div className="cards__text">
+          {filteredData.map((product) => (
+            <div
+              key={product.id}
+              className="card"
+              onClick={() => handleCardClick(product.id)}
+            >
+              <img src={product.img} alt="" />
+              <div className="cards__text">
                 <h3>{product.title}</h3>
                 <h5>$ {product.sum}</h5>
-                <p>{product.qnt}</p>
-                </div>
+                <p>{product.qnt} Bowls available</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
