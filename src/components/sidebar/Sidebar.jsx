@@ -3,7 +3,7 @@ import "./sidebar.scss";
 import logo from "../../../public/logo.svg";
 
 const Sidebar = () => {
-  const [focusedItem, setFocusedItem] = useState(null);
+  const [focusedItem, setFocusedItem] = useState(1);
 
   const handleItemClick = (index) => {
     if (focusedItem === index) {
