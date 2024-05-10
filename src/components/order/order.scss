@@ -1,7 +1,6 @@
 .order {
   width: 30%;
   position: fixed;
-  z-index: 9999;
   height: 100vh;
   right: 0;
   display: flex;
@@ -201,7 +200,7 @@
     justify-content: start;
     gap: 36px;
     padding-top: 20px;
-    border-top: 1px solid #393C49;
+    border-top: 1px solid #393c49;
     &--price {
       width: 100%;
       display: flex;
